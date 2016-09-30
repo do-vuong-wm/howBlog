@@ -1,0 +1,72 @@
+body{
+
+    background-color: whitesmoke;
+
+}
+
+.container-fluid{
+
+    width: 90%;
+
+}
+
+.row-content{
+
+    background-color: white;
+    padding: 20px;
+
+}
+
+#form{
+
+    display: none;
+
+}
+
+.jumbotron{
+
+    background-color: #1ab7ea;
+    padding: 70px 30px;
+    margin: 0 auto;
+
+}
+
+.navbar{
+
+    background-color: black;
+    border: none;
+
+}
+
+.likes{
+
+    background-color: #5eb95e;
+
+}
+
+.shared{
+
+    background-color:deeppink;
+
+}
+
+ul{
+
+    list-style: none;
+
+
+}
+
+.media-heading{
+
+    text-align: center;
+    font-size: 50px;
+    font-family: Impact;
+
+}
+
+.media-body{
+
+    padding: 20px;
+
+}
