@@ -5,6 +5,50 @@
  * Date: 9/27/16
  * Time: 4:23 PM
  */
+require 'essentials/includes.php';
+
+$database = new Database;
+
+$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+if(@$_POST['delete']){
+
+    $form_id = $_POST['form_id'];
+    $database->query('DELETE FROM posts WHERE id = :id');
+    $database->bind(':id', $form_id);
+    $database->execute();
+
+
+}
+
+if(@$post['update']){
+
+    $id = $post['id'];
+    $newtitle = $post['title'];
+    $newbody = $post['body'];
+
+    $database->query('UPDATE posts SET title = :title , body = :body WHERE id = :id');
+    $database->bind(':title', $newtitle);
+    $database->bind(':body', $newbody);
+    $database->bind(':id', $id);
+    $database->execute();
+
+}
+
+if(@$post['submit']){
+    $title = $post['title'];
+    $body = $post['body'];
+
+
+
+    $database->query('INSERT INTO posts (title, body) VALUES(:title, :body)');
+    $database->bind(':title', $title);
+    $database->bind(':body', $body);
+    $database->execute();
+    if($database->lastInsertId()){
+        echo '<p>Post Added!</p>';
+    }
+}
 
 ?>
 
